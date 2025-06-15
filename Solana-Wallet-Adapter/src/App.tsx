@@ -7,6 +7,7 @@ import {
   WalletMultiButton,
 } from "@solana/wallet-adapter-react-ui";
 import { RequestAirdrop } from "./components/RequestAirdrop";
+import { ShowBalance } from "./components/ShowBalance";
 
 const App = () => {
   return (
@@ -23,6 +24,16 @@ const App = () => {
             >
               <WalletMultiButton />
             </div>
+            <div
+              style={{
+                display: "flex",
+                width: "100vw",
+                justifyContent: "center",
+              }}
+            >
+              <ShowBalance />
+            </div>
+            <br />
             <div
               style={{
                 display: "flex",
