@@ -1,10 +1,23 @@
+import {
+  ConnectionProvider,
+  WalletProvider,
+} from "@solana/wallet-adapter-react";
+import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 
 const App = () => {
   return (
-    <div>
-      Wallet-Adapter-Solana
-    </div>
-  )
-}
+    <>
+      <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
+        <WalletProvider wallets={[]} autoConnect>
+          <WalletModalProvider>
+            <div>
+              <button>Connect Wallet</button>
+            </div>
+          </WalletModalProvider>
+        </WalletProvider>
+      </ConnectionProvider>
+    </>
+  );
+};
 
-export default App
+export default App;
