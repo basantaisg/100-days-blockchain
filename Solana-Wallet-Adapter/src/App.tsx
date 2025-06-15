@@ -16,12 +16,20 @@ const App = () => {
           <WalletModalProvider>
             <div
               style={{
-                width: "100vw",
                 display: "flex",
-                justifyContent: "space-between",
+                width: "100vw",
+                justifyContent: "center",
               }}
             >
               <WalletMultiButton />
+            </div>
+            <div
+              style={{
+                display: "flex",
+                width: "100vw",
+                justifyContent: "center",
+              }}
+            >
               <RequestAirdrop />
             </div>
           </WalletModalProvider>

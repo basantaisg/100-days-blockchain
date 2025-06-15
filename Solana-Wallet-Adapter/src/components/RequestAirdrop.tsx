@@ -1,6 +1,10 @@
+import { useWallet } from "@solana/wallet-adapter-react";
+
 export const RequestAirdrop = () => {
+  const wallet = useWallet();
+
   function RequestAirdrop() {
-    alert("Airdrop requested!");
+    let publicKey = wallet.publicKey?.toBase58();
   }
 
   return (
