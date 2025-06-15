@@ -2,7 +2,11 @@ import {
   ConnectionProvider,
   WalletProvider,
 } from "@solana/wallet-adapter-react";
-import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
+import {
+  WalletModalProvider,
+  WalletMultiButton,
+} from "@solana/wallet-adapter-react-ui";
+import { RequestAirdrop } from "./components/RequestAirdrop";
 
 const App = () => {
   return (
@@ -10,8 +14,15 @@ const App = () => {
       <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
         <WalletProvider wallets={[]} autoConnect>
           <WalletModalProvider>
-            <div>
-              <button>Connect Wallet</button>
+            <div
+              style={{
+                width: "100vw",
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+            >
+              <WalletMultiButton />
+              <RequestAirdrop />
             </div>
           </WalletModalProvider>
         </WalletProvider>
